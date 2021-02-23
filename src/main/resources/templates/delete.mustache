@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Delete message by ID
+    </head>
+    <body>
+    <div>
+        <form method="post">
+            <input type="number" name="id" placeholder="Введите id сообщения, которое нужно удалить"/>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        </form>
+    </div>
+    </body>
+</html>
