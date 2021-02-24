@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost">
+<dataSource name="sweater@localhost">
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.20">
     <root id="1">
       <ServerVersion>13.1</ServerVersion>
@@ -784,52 +784,60 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1614073883</StartupTime>
+      <StartupTime>1614158329</StartupTime>
     </root>
-    <database id="2" parent="1" name="DBLogger">
-      <ObjectId>16395</ObjectId>
-      <Owner>root</Owner>
+    <database id="2" parent="1" name="avezettai">
+      <ObjectId>16444</ObjectId>
+      <Owner>postgres</Owner>
     </database>
-    <database id="3" parent="1" name="postgres">
+    <database id="3" parent="1" name="first_db">
+      <ObjectId>16483</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="4" parent="1" name="java_ee_db">
+      <ObjectId>16536</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="5" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>502</IntrospectionStateNumber>
-      <Current>1</Current>
+      <IntrospectionStateNumber>601</IntrospectionStateNumber>
     </database>
-    <database id="4" parent="1" name="sweater">
-      <ObjectId>16402</ObjectId>
+    <database id="6" parent="1" name="sweater">
+      <ObjectId>16546</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>530</IntrospectionStateNumber>
-      <Relations>sequence|table|16403|16405|1
-sequence|table|16416|16418|1
+      <IntrospectionStateNumber>610</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Relations>sequence|table|16547|16549|1
+sequence|table|16560|16562|1
 </Relations>
     </database>
-    <role id="5" parent="1" name="pg_execute_server_program">
+    <role id="7" parent="1" name="pg_execute_server_program">
       <ObjectId>4571</ObjectId>
     </role>
-    <role id="6" parent="1" name="pg_monitor">
+    <role id="8" parent="1" name="pg_monitor">
       <ObjectId>3373</ObjectId>
     </role>
-    <role id="7" parent="1" name="pg_read_all_settings">
+    <role id="9" parent="1" name="pg_read_all_settings">
       <ObjectId>3374</ObjectId>
     </role>
-    <role id="8" parent="1" name="pg_read_all_stats">
+    <role id="10" parent="1" name="pg_read_all_stats">
       <ObjectId>3375</ObjectId>
     </role>
-    <role id="9" parent="1" name="pg_read_server_files">
+    <role id="11" parent="1" name="pg_read_server_files">
       <ObjectId>4569</ObjectId>
     </role>
-    <role id="10" parent="1" name="pg_signal_backend">
+    <role id="12" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
     </role>
-    <role id="11" parent="1" name="pg_stat_scan_tables">
+    <role id="13" parent="1" name="pg_stat_scan_tables">
       <ObjectId>3377</ObjectId>
     </role>
-    <role id="12" parent="1" name="pg_write_server_files">
+    <role id="14" parent="1" name="pg_write_server_files">
       <ObjectId>4570</ObjectId>
     </role>
-    <role id="13" parent="1" name="postgres">
+    <role id="15" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
       <CreateDb>1</CreateDb>
@@ -838,25 +846,17 @@ sequence|table|16416|16418|1
       <Replication>1</Replication>
       <BypassRls>1</BypassRls>
     </role>
-    <role id="14" parent="1" name="root">
-      <ObjectId>16394</ObjectId>
-      <SuperRole>1</SuperRole>
-      <CreateDb>1</CreateDb>
-      <CreateRole>1</CreateRole>
-      <CanLogin>1</CanLogin>
-      <Replication>1</Replication>
-    </role>
-    <tablespace id="15" parent="1" name="pg_default">
+    <tablespace id="16" parent="1" name="pg_default">
       <ObjectId>1663</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>1</StateNumber>
     </tablespace>
-    <tablespace id="16" parent="1" name="pg_global">
+    <tablespace id="17" parent="1" name="pg_global">
       <ObjectId>1664</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>1</StateNumber>
     </tablespace>
-    <schema id="17" parent="3" name="information_schema">
+    <schema id="18" parent="6" name="information_schema">
       <ObjectId>13158</ObjectId>
       <Acl>10=UC/10
 U/10
@@ -864,7 +864,7 @@ U/10
       <StateNumber>293</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="18" parent="3" name="pg_catalog">
+    <schema id="19" parent="6" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
       <Acl>10=UC/10
@@ -873,7 +873,7 @@ U/10
       <StateNumber>286</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="19" parent="3" name="public">
+    <schema id="20" parent="6" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Acl>10=UC/10
@@ -881,18 +881,10 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>503</IntrospectionStateNumber>
+      <IntrospectionStateNumber>611</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
-    <extension id="20" parent="3" name="adminpack">
-      <ObjectId>16384</ObjectId>
-      <Comment>administrative functions for PostgreSQL</Comment>
-      <StateNumber>486</StateNumber>
-      <Version>2.1</Version>
-      <SchemaName>pg_catalog</SchemaName>
-      <SchemaId>11</SchemaId>
-    </extension>
-    <extension id="21" parent="3" name="plpgsql">
+    <extension id="21" parent="6" name="plpgsql">
       <ObjectId>13428</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>439</StateNumber>
@@ -900,21 +892,21 @@ UC/10
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <language id="22" parent="3" name="c">
+    <language id="22" parent="6" name="c">
       <ObjectId>13</ObjectId>
       <Comment>dynamically-loaded C functions</Comment>
       <StateNumber>1</StateNumber>
       <ValidatorName>fmgr_c_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <language id="23" parent="3" name="internal">
+    <language id="23" parent="6" name="internal">
       <ObjectId>12</ObjectId>
       <Comment>built-in functions</Comment>
       <StateNumber>1</StateNumber>
       <ValidatorName>fmgr_internal_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <language id="24" parent="3" name="plpgsql">
+    <language id="24" parent="6" name="plpgsql">
       <ObjectId>13432</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>439</StateNumber>
@@ -926,7 +918,7 @@ UC/10
       <ValidatorName>plpgsql_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <language id="25" parent="3" name="sql">
+    <language id="25" parent="6" name="sql">
       <ObjectId>14</ObjectId>
       <Comment>SQL-language functions</Comment>
       <StateNumber>1</StateNumber>
@@ -934,14 +926,14 @@ UC/10
       <ValidatorName>fmgr_sql_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <access-method id="26" parent="3" name="heap">
+    <access-method id="26" parent="6" name="heap">
       <ObjectId>2</ObjectId>
       <Comment>heap table access method</Comment>
       <StateNumber>1</StateNumber>
       <Handler>pg_catalog.heap_tableam_handler</Handler>
       <HandlerId>3</HandlerId>
     </access-method>
-    <access-method id="27" parent="3" name="btree">
+    <access-method id="27" parent="6" name="btree">
       <ObjectId>403</ObjectId>
       <Comment>b-tree index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -949,7 +941,7 @@ UC/10
       <HandlerId>330</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="28" parent="3" name="hash">
+    <access-method id="28" parent="6" name="hash">
       <ObjectId>405</ObjectId>
       <Comment>hash index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -957,7 +949,7 @@ UC/10
       <HandlerId>331</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="29" parent="3" name="gist">
+    <access-method id="29" parent="6" name="gist">
       <ObjectId>783</ObjectId>
       <Comment>GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -965,7 +957,7 @@ UC/10
       <HandlerId>332</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="30" parent="3" name="gin">
+    <access-method id="30" parent="6" name="gin">
       <ObjectId>2742</ObjectId>
       <Comment>GIN index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -973,7 +965,7 @@ UC/10
       <HandlerId>333</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="31" parent="3" name="spgist">
+    <access-method id="31" parent="6" name="spgist">
       <ObjectId>4000</ObjectId>
       <Comment>SP-GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -981,7 +973,7 @@ UC/10
       <HandlerId>334</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="32" parent="3" name="brin">
+    <access-method id="32" parent="6" name="brin">
       <ObjectId>3580</ObjectId>
       <Comment>block range index (BRIN) access method</Comment>
       <StateNumber>1</StateNumber>
@@ -989,129 +981,158 @@ UC/10
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <schema id="33" parent="4" name="information_schema">
-      <ObjectId>13158</ObjectId>
-      <Acl>10=UC/10
-U/10
-</Acl>
-      <StateNumber>293</StateNumber>
+    <sequence id="33" parent="20" name="message_id_seq">
+      <ObjectId>16547</ObjectId>
       <Owner>postgres</Owner>
-    </schema>
-    <schema id="34" parent="4" name="pg_catalog">
-      <ObjectId>11</ObjectId>
-      <Comment>system catalog schema</Comment>
-      <Acl>10=UC/10
-U/10
-</Acl>
-      <StateNumber>286</StateNumber>
+      <StateNumber>585</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="34" parent="20" name="usr_id_seq">
+      <ObjectId>16560</ObjectId>
       <Owner>postgres</Owner>
-    </schema>
-    <schema id="35" parent="4" name="public">
-      <ObjectId>2200</ObjectId>
-      <Comment>standard public schema</Comment>
-      <Acl>10=UC/10
-UC/10
-</Acl>
-      <StateNumber>287</StateNumber>
+      <StateNumber>587</StateNumber>
+      <DataType>bigint|0s</DataType>
+    </sequence>
+    <table id="35" parent="20" name="message">
+      <ObjectId>16549</ObjectId>
       <Owner>postgres</Owner>
-      <Current>1</Current>
-    </schema>
-    <extension id="36" parent="4" name="plpgsql">
-      <ObjectId>13428</ObjectId>
-      <Comment>PL/pgSQL procedural language</Comment>
-      <StateNumber>439</StateNumber>
-      <Version>1.0</Version>
-      <SchemaName>pg_catalog</SchemaName>
-      <SchemaId>11</SchemaId>
-    </extension>
-    <language id="37" parent="4" name="c">
-      <ObjectId>13</ObjectId>
-      <Comment>dynamically-loaded C functions</Comment>
-      <StateNumber>1</StateNumber>
-      <ValidatorName>fmgr_c_validator</ValidatorName>
-      <ValidatorSchema>pg_catalog</ValidatorSchema>
-    </language>
-    <language id="38" parent="4" name="internal">
-      <ObjectId>12</ObjectId>
-      <Comment>built-in functions</Comment>
-      <StateNumber>1</StateNumber>
-      <ValidatorName>fmgr_internal_validator</ValidatorName>
-      <ValidatorSchema>pg_catalog</ValidatorSchema>
-    </language>
-    <language id="39" parent="4" name="plpgsql">
-      <ObjectId>13432</ObjectId>
-      <Comment>PL/pgSQL procedural language</Comment>
-      <StateNumber>439</StateNumber>
-      <Trusted>1</Trusted>
-      <HandlerName>plpgsql_call_handler</HandlerName>
-      <HandlerSchema>pg_catalog</HandlerSchema>
-      <InlineHandlerName>plpgsql_inline_handler</InlineHandlerName>
-      <InlineHandlerSchema>pg_catalog</InlineHandlerSchema>
-      <ValidatorName>plpgsql_validator</ValidatorName>
-      <ValidatorSchema>pg_catalog</ValidatorSchema>
-    </language>
-    <language id="40" parent="4" name="sql">
-      <ObjectId>14</ObjectId>
-      <Comment>SQL-language functions</Comment>
-      <StateNumber>1</StateNumber>
-      <Trusted>1</Trusted>
-      <ValidatorName>fmgr_sql_validator</ValidatorName>
-      <ValidatorSchema>pg_catalog</ValidatorSchema>
-    </language>
-    <access-method id="41" parent="4" name="heap">
-      <ObjectId>2</ObjectId>
-      <Comment>heap table access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.heap_tableam_handler</Handler>
-      <HandlerId>3</HandlerId>
-    </access-method>
-    <access-method id="42" parent="4" name="btree">
-      <ObjectId>403</ObjectId>
-      <Comment>b-tree index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.bthandler</Handler>
-      <HandlerId>330</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="43" parent="4" name="hash">
-      <ObjectId>405</ObjectId>
-      <Comment>hash index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.hashhandler</Handler>
-      <HandlerId>331</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="44" parent="4" name="gist">
-      <ObjectId>783</ObjectId>
-      <Comment>GiST index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.gisthandler</Handler>
-      <HandlerId>332</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="45" parent="4" name="gin">
-      <ObjectId>2742</ObjectId>
-      <Comment>GIN index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.ginhandler</Handler>
-      <HandlerId>333</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="46" parent="4" name="spgist">
-      <ObjectId>4000</ObjectId>
-      <Comment>SP-GiST index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.spghandler</Handler>
-      <HandlerId>334</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="47" parent="4" name="brin">
-      <ObjectId>3580</ObjectId>
-      <Comment>block range index (BRIN) access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.brinhandler</Handler>
-      <HandlerId>335</HandlerId>
-      <Type>index</Type>
-    </access-method>
+      <StateNumber>597</StateNumber>
+    </table>
+    <table id="36" parent="20" name="user_role">
+      <ObjectId>16557</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>588</StateNumber>
+    </table>
+    <table id="37" parent="20" name="usr">
+      <ObjectId>16562</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>588</StateNumber>
+    </table>
+    <column id="38" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>585</StateNumber>
+      <TypeId>23</TypeId>
+      <IdentityKind>by-default</IdentityKind>
+    </column>
+    <column id="39" parent="35" name="tag">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>585</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="40" parent="35" name="text">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>585</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="41" parent="35" name="author">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>594</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="42" parent="35" name="user_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>596</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="43" parent="35" name="message_pkey">
+      <ObjectId>16555</ObjectId>
+      <StateNumber>585</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="44" parent="35" name="message_pkey">
+      <ObjectId>16556</ObjectId>
+      <StateNumber>585</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>message_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="45" parent="35" name="fk70bv6o4exfe3fbrho7nuotopf">
+      <ObjectId>16575</ObjectId>
+      <StateNumber>597</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16562</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>usr</RefTableName>
+      <RefKeyName>usr_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="46" parent="36" name="user_id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>586</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="47" parent="36" name="roles">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>586</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <foreign-key id="48" parent="36" name="fkfpm8swft53ulq2hl11yplpr5">
+      <ObjectId>16570</ObjectId>
+      <StateNumber>588</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16562</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>usr</RefTableName>
+      <RefKeyName>usr_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="49" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>587</StateNumber>
+      <TypeId>20</TypeId>
+      <IdentityKind>by-default</IdentityKind>
+    </column>
+    <column id="50" parent="37" name="active">
+      <Position>2</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>587</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="51" parent="37" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>587</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="52" parent="37" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>587</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="53" parent="37" name="usr_pkey">
+      <ObjectId>16568</ObjectId>
+      <StateNumber>587</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>3124</ClassIds>
+    </index>
+    <key id="54" parent="37" name="usr_pkey">
+      <ObjectId>16569</ObjectId>
+      <StateNumber>587</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>usr_pkey</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

@@ -10,6 +10,9 @@
 </div>
 
 <div>
+    <h3>Поля ввода</h3>
+</div>
+<div>
     <form method="post">
         <input type="text" name="text" placeholder="Введите сообщение"/>
         <input type="text" name="tag" placeholder="Тэг"/>
@@ -19,7 +22,7 @@
 </div>
 
 <div>
-    Список сообщений
+    <h3>Список сообщений</h3>
 </div>
 
 <form method="post" action="filter">
@@ -33,6 +36,7 @@
         <b>{{id}}</b>
         <span>{{text}}</span>
         <i>{{tag}}</i>
+        <strong>{{authorName}}</strong>
     </div>
 {{/messages}}
 
