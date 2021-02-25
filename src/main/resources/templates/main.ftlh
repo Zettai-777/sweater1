@@ -2,7 +2,10 @@
 <#import "parts/login.ftlh" as l>
 <@c.page>
 
-    <div><@l.logout/></div>
+    <div>
+        <@l.logout/>
+        <span><a href="/user">User list</a></span>
+    </div>
     <div><h3>Поля ввода</h3></div>
 
     <div>
