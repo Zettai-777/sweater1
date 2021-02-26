@@ -1,8 +1,9 @@
 <#import "parts/common.ftlh" as c>
 <#import "parts/login.ftlh" as l>
 <@c.page>
-    <h3>Registration page</h3>
-    <i><b>Add new user</b></i>
-    ${message?if_exists}
-    <@l.login "/registration"/>
+    <div class="mb-1">
+        <strong>Add new user</strong>
+    </div>
+    ${message!}
+    <@l.login "/registration" true/>
 </@c.page>
