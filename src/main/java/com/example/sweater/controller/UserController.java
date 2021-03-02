@@ -59,7 +59,11 @@ public class UserController {
             @AuthenticationPrincipal User user,
             @RequestParam String password,
             @RequestParam String email
+//            Model model
     ){
+//        if(!user.getPassword().equals(password) && user.getEmail().equals(email)){
+//            model.addAttribute("successPasswordChange", "successPasswordChange");
+//        }
         userService.updateProfile(user, password, email);
         return "redirect:/user/profile";
     }
