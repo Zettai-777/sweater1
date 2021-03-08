@@ -10,24 +10,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import javax.ws.rs.Path;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 @Controller
 public class MainController {
 
-    @Autowired
-    private MessageRepo messageRepo;
-
     @Value("${upload.path}")
     private String uploadPath;
+
+    @Autowired
+    private MessageRepo messageRepo;
 
     @GetMapping("/")
     public String greeting() {
@@ -62,23 +65,8 @@ public class MainController {
             model.mergeAttributes(errorsMap);
             model.addAttribute("message", message);
         } else {
-            if (file != null && !file.getOriginalFilename().isEmpty()) {
-                File uploadDir = new File(uploadPath);
-
-                if (!uploadDir.exists()) {
-                    uploadDir.mkdir();
-                }
-
-                String uuidFile = UUID.randomUUID().toString();
-                String resultFileName = uuidFile + "." + file.getOriginalFilename();
-
-                file.transferTo(new File(uploadPath + "/" + resultFileName));
-
-                message.setFilename(resultFileName);
-            }
-
+            ControllerUtils.saveFile(message, file, uploadPath);
             model.addAttribute("message", null);
-
             messageRepo.save(message);
         }
 
@@ -86,18 +74,4 @@ public class MainController {
         model.addAttribute("messages", messages);
         return "main";
     }
-
-
-
-//    @DeleteMapping("main")
-//    public String delete(@RequestParam Long id, Map<String, Object> model){
-//        Optional<Message> messageById = messageRepo.findById(id);
-//        if(messageById.isPresent()){
-//            Message message = messageById.get();
-//            messageRepo.delete(message);
-//            model.remove(message);
-//        }
-//        return "main";
-//    }
-
 }

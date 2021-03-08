@@ -33,8 +33,7 @@ public class Message {
         this.author = author;
     }
 
-    public Message() {
-    }
+    public Message() {}
 
     public String getAuthorName(){
         return author != null ? author.getUsername() : "<none>";
